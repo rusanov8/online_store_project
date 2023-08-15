@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="card-img-top"
+                 src="{% mediapath object.image %}"
+                 alt="Card image cap">
+            <h1>{{ object.title|title }}</h1>
+            <p class="lead">{{ object.description }}</p>
+            <p class="text-muted">Цена: {{ object.price }} руб.</p>
+            <button class="btn btn-primary">Купить</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
