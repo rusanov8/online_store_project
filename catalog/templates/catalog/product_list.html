@@ -2,6 +2,10 @@
 {% load my_tags %}
 
 {% block content %}
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить продукт</a>
+
+</div>
 <div class="row">
     {% for object in object_list %}
     <div class="col-md-4">
@@ -13,7 +17,7 @@
                 <p class="card-text text-center">{{ object.title }}</p>
                 <div class="text-center">
                     <p class="card-text">{{ object.description|slice:":100" }}</p>
-                    <a href="{% url 'catalog:product_detail' object.id %}"
+                    <a href="{% url 'catalog:view_product' object.pk %}"
                        class="btn btn-sm btn-outline-secondary text-center mx-auto">Подробнее о товаре</a>
                 </div>
             </div>
