@@ -1,19 +1,15 @@
 from django.shortcuts import render, redirect
 
-from catalog.forms import ProductForm
+
+from django.urls import reverse_lazy
+
 from catalog.models import Product
+from django.views.generic import ListView, DetailView, CreateView
 
 
-def get_home(request):
-    """Контроллер, который отвечает за отображение домашней страницы"""
-    products_list = Product.objects.all()  # Список продуктов
-
-    context = {
-        'object_list': products_list,
-        'title': 'Главная'
-    }
-
-    return render(request, 'catalog/home.html', context)
+class ProductListView(ListView):
+    """Контроллер для отображения списка товаров"""
+    model = Product
 
 
 def get_contacts(request):
@@ -33,32 +29,13 @@ def get_contacts(request):
     return render(request, 'catalog/contacts.html', context)
 
 
-def product_detail(request, product_id):
+class ProductDetailView(DetailView):
     """Контроллер для отображения страницы с товаром"""
-
-    product = Product.objects.get(pk=product_id)
-    context = {
-        'object': product,
-        'title': product.title
-    }
-    return render(request, 'catalog/product.html', context)
+    model = Product
 
 
-def create_product(request):
-    """Контроллер для добавления нового товара"""
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('catalog:home')
-
-    else:
-        form = ProductForm()
-
-    context = {
-        'form': form
-    }
-
-    return render(request, 'catalog/create_product.html', context)
-
+class ProductCreateView(CreateView):
+    model = Product
+    fields = ('title', 'description', 'image', 'category', 'price')
+    success_url = reverse_lazy('catalog:home')
 
