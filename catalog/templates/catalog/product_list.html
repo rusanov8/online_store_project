@@ -17,8 +17,17 @@
                 <p class="card-text text-center">{{ object.title }}</p>
                 <div class="text-center">
                     <p class="card-text">{{ object.description|slice:":100" }}</p>
+                    {% if object.current_version  %}
+                    <p class="card-text">
+                        Текущая версия: {{ object.current_version.version_number }} - {{ object.current_version.version_title }}
+                    </p>
+                    {% endif %}
                     <a href="{% url 'catalog:view_product' object.pk %}"
-                       class="btn btn-sm btn-outline-secondary text-center mx-auto">Подробнее о товаре</a>
+                       class="btn btn-sm btn-outline-secondary text-center mx-auto btn-details">Подробнее</a>
+                    <a href="{% url 'catalog:edit_product' object.pk %}"
+                       class="btn btn-sm btn-outline-secondary text-center mx-auto btn-edit">Изменить</a>
+                    <a href="{% url 'catalog:delete_product' object.pk %}"
+                       class="btn btn-sm btn-outline-secondary text-center mx-auto btn-delete">Удалить</a>
                 </div>
             </div>
         </div>
