@@ -9,7 +9,6 @@ class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='наименование')
     description = models.TextField(verbose_name='описание')
 
-
     def __str__(self):
         return self.title
 
@@ -33,6 +32,23 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
+
+
+class Version(models.Model):
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    version_number = models.CharField(max_length=150, verbose_name='Номер версии')
+    version_title = models.CharField(max_length=150, verbose_name='Название версии')
+    current_version = models.BooleanField(default=False, verbose_name='Текущая версия')
+
+    def __str__(self):
+        return f'Версия {self.version_number} {self.version_title}'
+
+    class Meta:
+        verbose_name = 'Версия'
+        verbose_name_plural = 'Версии'
+        db_table = 'versions'
+
 
 
 
