@@ -44,6 +44,11 @@ class Version(models.Model):
     def __str__(self):
         return f'Версия {self.version_number} {self.version_title}'
 
+    def save(self, *args, **kwargs):
+        if self.current_version:
+            Version.objects.filter(product=self.product, current_version=True).update(current_version=False)
+        super(Version, self).save(*args, **kwargs)
+
     class Meta:
         verbose_name = 'Версия'
         verbose_name_plural = 'Версии'
