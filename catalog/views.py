@@ -1,4 +1,6 @@
-from django.forms import inlineformset_factory
+from django.contrib import messages
+from django.core.exceptions import ValidationError
+from django.forms import inlineformset_factory, forms
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from catalog.models import Product, Version
@@ -78,12 +80,6 @@ class ProductUpdateView(UpdateView):
         if formset.is_valid():
             formset.instance = self.object
             formset.save()
-
-        # # Проверка активных версий
-        # active_versions = Version.objects.filter(product=self.object, current_version=True)
-        # if active_versions.count() > 1:
-        #     form.add_error(None, 'Может быть только одна активная версия.')
-        #     return self.form_invalid(form)
 
         return super().form_valid(form)
 
