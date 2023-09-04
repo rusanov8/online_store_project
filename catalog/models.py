@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+from users.models import User
 
 # Константа для обозначения необязательных полей
 NULLABLE = {'blank': True, 'null': True}
@@ -25,6 +25,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='цена за покупку')
     create_date = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
     change_date = models.DateTimeField(auto_now=True, verbose_name='дата последнего изменения')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='пользователь', default=1)
 
     def __str__(self):
         return self.title

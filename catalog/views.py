@@ -1,11 +1,19 @@
-from django.contrib import messages
-from django.core.exceptions import ValidationError
-from django.forms import inlineformset_factory, forms
-from django.shortcuts import render, redirect
+from django.forms import inlineformset_factory
+from django.http import HttpResponseForbidden
+from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from catalog.models import Product, Version
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from catalog.forms import ProductForm, VersionForm
+
+
+class VerificationRequiredMixin:
+    """Миксин для предварительной проверки подтверждения пользователя"""
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_verified:
+            return HttpResponseForbidden("Доступ запрещен")
+        return super().dispatch(request, *args, **kwargs)
 
 
 class ProductListView(ListView):
@@ -48,13 +56,15 @@ class ProductDetailView(DetailView):
     model = Product
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(VerificationRequiredMixin, CreateView):
+    """Контроллер для создания нового товара"""
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:home')
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(VerificationRequiredMixin, UpdateView):
+    """Контроллер для редактирования товара"""
     model = Product
     form_class = ProductForm
 
@@ -84,8 +94,10 @@ class ProductUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(VerificationRequiredMixin, DeleteView):
+    """Контроллер для удаления товара"""
     model = Product
     fields = ('title', 'description', 'image', 'category', 'price')
     success_url = reverse_lazy('catalog:home')
+
 
