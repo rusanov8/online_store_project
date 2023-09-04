@@ -1,0 +1,80 @@
+[
+  {
+    "model": "blog.blog",
+    "pk": 10,
+    "fields": {
+      "title": "Тестовая статья",
+      "slug": "1",
+      "content": "Изменил",
+      "preview_image": "blog/sticker.jpg",
+      "publication_date": "2023-08-17",
+      "is_published": true,
+      "views_count": 106
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 12,
+    "fields": {
+      "title": "Тест2",
+      "slug": "test2",
+      "content": "Тест2",
+      "preview_image": "",
+      "publication_date": "2023-08-17",
+      "is_published": true,
+      "views_count": 100
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 14,
+    "fields": {
+      "title": "Test4",
+      "slug": "test4",
+      "content": "TEST4",
+      "preview_image": "",
+      "publication_date": "2023-08-18",
+      "is_published": true,
+      "views_count": 101
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 15,
+    "fields": {
+      "title": "Test5",
+      "slug": "test5",
+      "content": "test5",
+      "preview_image": "",
+      "publication_date": "2023-08-18",
+      "is_published": true,
+      "views_count": 109
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 16,
+    "fields": {
+      "title": "Test6",
+      "slug": "test6",
+      "content": "Test6",
+      "preview_image": "",
+      "publication_date": "2023-08-18",
+      "is_published": true,
+      "views_count": 100
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 17,
+    "fields": {
+      "title": "Test7",
+      "slug": "test7",
+      "content": "Test7",
+      "preview_image": "",
+      "publication_date": "2023-08-18",
+      "is_published": true,
+      "views_count": 100
+    }
+  }
+]

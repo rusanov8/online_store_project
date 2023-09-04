@@ -1,0 +1,260 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "title": "Электроника",
+      "description": "Широкий ассортимент электронных устройств и аксессуаров. От современных смартфонов и ноутбуков до умных гаджетов для дома."
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "title": "Одежда и обувь",
+      "description": "Обновите свой гардероб с нами. У нас есть все, что нужно, от повседневных нарядов до эксклюзивных дизайнов."
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "title": "Дом и быт",
+      "description": "Создайте уют и гармонию в своем доме с нашим широким выбором мебели, предметов интерьера и бытовой техники."
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 9,
+    "fields": {
+      "title": "Спорт и отдых",
+      "description": "Поддерживайте свою форму и активный образ жизни с нашими спортивными товарами. У нас есть все, чтобы помочь вам достичь своих спортивных целей."
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 10,
+    "fields": {
+      "title": "Красота и здоровье",
+      "description": "Заботьтесь о своей красоте и здоровье с нашими товаров для ухода за кожей, волосами, зубами и телом."
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "title": "Смартфон Samsung Galaxy S21",
+      "description": "Мощный смартфон с высококачественным дисплеем и производительным процессором.",
+      "image": "products/samsung_s21.jpeg",
+      "category": 6,
+      "price": "67990.00",
+      "create_date": "2023-08-14T08:04:46.398Z",
+      "change_date": "2023-08-15T16:16:33.868Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "title": "Куртка зимняя Columbia",
+      "description": "Теплая зимняя куртка с водоотталкивающей поверхностью.",
+      "image": "products/columbia.jpg",
+      "category": 7,
+      "price": "4999.00",
+      "create_date": "2023-08-14T08:13:49.062Z",
+      "change_date": "2023-08-29T04:35:47.663Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "title": "Пылесос Dyson V11",
+      "description": "Беспроводной пылесос с мощным всасыванием и длительным временем работы.",
+      "image": "products/dyson.jpg",
+      "category": 8,
+      "price": "49990.00",
+      "create_date": "2023-08-14T08:14:52.255Z",
+      "change_date": "2023-08-29T04:56:46.202Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "title": "Велосипед Merida Crossway",
+      "description": "Удобный городской велосипед для активного отдыха и перемещений по городу.",
+      "image": "products/merida_crossway.jpg",
+      "category": 9,
+      "price": "37990.00",
+      "create_date": "2023-08-14T08:16:27.455Z",
+      "change_date": "2023-08-29T04:39:09.524Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "title": "Наушники Sony WH-1000XM4",
+      "description": "Беспроводные наушники с отличным звуком и шумоподавлением.",
+      "image": "products/sony.webp",
+      "category": 6,
+      "price": "25990.00",
+      "create_date": "2023-08-14T08:18:14.161Z",
+      "change_date": "2023-08-29T04:58:57.428Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "title": "Крем для лица L'Oreal Paris",
+      "description": "Увлажняющий крем для лица с добавлением натуральных компонентов.",
+      "image": "products/loreal.jpg",
+      "category": 10,
+      "price": "1990.00",
+      "create_date": "2023-08-14T08:20:09.411Z",
+      "change_date": "2023-08-31T02:57:58.441Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "title": "Джинсы Levi's 501",
+      "description": "Классические джинсы с удобной посадкой и стильным дизайном.",
+      "image": "products/levis.jpg",
+      "category": 7,
+      "price": "8990.00",
+      "create_date": "2023-08-14T08:21:46.993Z",
+      "change_date": "2023-08-15T16:24:36.534Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "title": "Мультиварка REDMOND RMC-M4502",
+      "description": "Универсальная мультиварка с большим набором программ и функций.",
+      "image": "products/redmond.jpg",
+      "category": 8,
+      "price": "10990.00",
+      "create_date": "2023-08-14T08:22:38.356Z",
+      "change_date": "2023-08-15T16:26:14.672Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "title": "Коврик для йоги Gravity TPE",
+      "description": "Идеальное средство для практики йоги с использованием инновационного материала TPE.",
+      "image": "products/yoga.jpg",
+      "category": 9,
+      "price": "1090.00",
+      "create_date": "2023-08-14T08:25:06.477Z",
+      "change_date": "2023-08-15T16:47:29.196Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "title": "Крем для рук Neutrogena",
+      "description": "Увлажняющий крем для рук с нежной текстурой и быстро впитывающейся формулой.",
+      "image": "products/neutrogena.webp",
+      "category": 10,
+      "price": "490.00",
+      "create_date": "2023-08-14T08:26:12.178Z",
+      "change_date": "2023-08-15T16:47:38.275Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "title": "Тональный крем Maybelline Fit Me Matte + Poreless",
+      "description": "Легкий тональный крем с матовым эффектом для идеального макияжа.",
+      "image": "products/tonal.webp",
+      "category": 10,
+      "price": "690.00",
+      "create_date": "2023-08-14T08:28:38.531Z",
+      "change_date": "2023-08-15T16:54:35.839Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "title": "Наушники Apple AirPods Pro",
+      "description": "Беспроводные наушники с активным шумоподавлением и качественным звуком.",
+      "image": "products/airpods.jpg",
+      "category": 6,
+      "price": "21990.00",
+      "create_date": "2023-08-14T08:29:28.773Z",
+      "change_date": "2023-08-15T16:47:48.602Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "title": "Пальто Zara Basic",
+      "description": "Стильное пальто для холодных дней с утеплителем и удобной посадкой.",
+      "image": "products/zara.jpg",
+      "category": 7,
+      "price": "6990.00",
+      "create_date": "2023-08-14T08:30:43.421Z",
+      "change_date": "2023-08-15T16:47:54.525Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "title": "Кофемашина DeLonghi ECAM 22.360.B",
+      "description": "Автоматическая кофемашина с широкими возможностями приготовления кофе.",
+      "image": "products/cofe.webp",
+      "category": 8,
+      "price": "29900.00",
+      "create_date": "2023-08-14T08:31:38.023Z",
+      "change_date": "2023-08-15T16:53:33.608Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "title": "Мяч для футбола Adidas Tango",
+      "description": "Профессиональный мяч для футбола с высокой точностью и контролем.",
+      "image": "products/adidas.jpg",
+      "category": 9,
+      "price": "4490.00",
+      "create_date": "2023-08-14T08:34:49.024Z",
+      "change_date": "2023-08-15T16:49:20.712Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 21,
+    "fields": {
+      "title": "Тест1",
+      "description": "Тестовый продукт",
+      "image": "",
+      "category": 9,
+      "price": "500.00",
+      "create_date": "2023-08-31T07:32:13.882Z",
+      "change_date": "2023-08-31T07:32:25.620Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 20,
+    "fields": {
+      "product": 21,
+      "version_number": "1.2",
+      "version_title": "1",
+      "current_version": true
+    }
+  }
+]
