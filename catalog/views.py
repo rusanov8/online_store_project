@@ -11,7 +11,7 @@ class VerificationRequiredMixin:
     """Миксин для предварительной проверки подтверждения пользователя"""
 
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_verified:
+        if not (request.user.is_authenticated and request.user.is_verified):
             return HttpResponseForbidden("Доступ запрещен")
         return super().dispatch(request, *args, **kwargs)
 
